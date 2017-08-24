@@ -3,7 +3,7 @@
   <head>
     <title>Fatarny</title>
     <%= csrf_meta_tags %>
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -13,7 +13,9 @@
   <body>
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+    <div class="container">
     <%= yield %>
+    </div>
     <script type="text/javascript" src="http://api.yamli.com/js/yamli_api.js"></script>
     <script type="text/javascript">
       if (typeof(Yamli) == "object" && Yamli.init( { uiLanguage: "en" , startMode: "on" } ))
@@ -24,4 +26,13 @@
       }
     </script>
   </body>
+  <footer class="footer  my-foot">
+    <center style="">
+      <a href=""  class="CALL-AM-AHMAD">Home</a>
+      <a href="" class="CALL-AM-AHMAD">Me</a>
+      <a href="" class="CALL-AM-AHMAD">Eat</a>
+      <a href="" class="CALL-AM-AHMAD">Drink</a>
+      <p class="-Mokarar-AbdelAzi">82 Mokrar Abdel Aziz Fahmy</p>
+    </center>
+  </footer>
 </html>

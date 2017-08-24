@@ -1,26 +1,35 @@
-<h2>Log in</h2>
+<img src="/logo.png" alt="" style="width: 80px;"  >
+<div class="cover">
+  <img src="/cover.png" alt="" class="cover-login" >
+  <br>
+</div>
 
+<div class="card">
+  <center>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true ,class: "input-red", placeholder: "Email Address"%>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" ,class: "input-red", placeholder: "Password"%>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+  <!-- <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
+  <% end -%> -->
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "EAT", class: "size" %>
   </div>
-<% end %>
+  <br>
+  <div style="margin-top: 20px"><%= render "devise/shared/links" %></div>
+  
 
-<%= render "devise/shared/links" %>
+<% end %>
+</center>
+<br>
+</div>
