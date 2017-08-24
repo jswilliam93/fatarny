@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <tbody>
+    <% name = '' %>
+    <% @orders.each do |order| %>
+      <% if name != order.restaraunt %>
+      <tr>
+        <td><h2><%= order.restaraunt %></h2></td>
+        <% name = order.restaraunt %>
+        <tr>
+          <td><h3><%= link_to 'Order from '+name, new_order_path(name: name)  %></h3></td>
+        </tr>
+      </tr>
+      <tr>
+        <td>Item</td>
+        <!-- <th>Restaraunt</th> -->
+        <td>Quantity</td>
+        <td>Comment</td>
+        <td>User</td>
+        <td colspan="3"></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td><%= order.item %></td>
+        <!-- <td><%= order.restaraunt %></td> -->
+        <td><div style="float: left;overflow: hidden;"><%= button_to "-", orders_incdec_path(order, number: -1) %></div>
+        <div style="float: left;overflow: hidden;padding-left:4px;padding-right:4px;"><%= order.quantity %></div>
+        <div style="float: left;overflow: hidden;"><%= button_to "+", orders_incdec_path(order, number: 1) %></div></td>
+        <td><%= order.comment %></td>
+        <td><%= order.user.name %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1><%= link_to 'Order from new restaraunt', new_order_path %></h1>
